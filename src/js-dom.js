@@ -8,7 +8,19 @@
 // update and say "Log out". If a user clicks on the button again, its text
 // should switch from "Log Out" to "Log In".
 
-/// TODO: replace this with your code
+const logInButton = document.querySelector("#auth");
+
+    logInButton.addEventListener('click', () => {
+        
+
+        if (logInButton.innerText === "Log in") {
+            logInButton.innerText = "Log out";
+            
+        } else {
+            logInButton.innerText = "Log in"
+        };
+    });
+
 
 // Send an alert
 //
@@ -17,12 +29,20 @@
 // A user should be able to enter what they want the alert to say in the
 // text box. Then, they can submit the form to trigger the alert.
 
-/// TODO: replace this with your code
+document.querySelector('#send-alert').addEventListener('submit', (event) => {
+
+    event.preventDefault();
+    let submittedText = document.querySelector('#alert-message').value
+
+    alert(`${submittedText}`)
+
+
+})
 
 // Add an item
 //
 // This is a pretty silly feature -- when a user clicks on the
-// button (the one that says "Double-ulick to add an item"), a new list
+// button (the one that says "Double-click to add an item"), a new list
 // item should appear.
 //
 // In other words, whenever a user clicks on the button, just
@@ -34,7 +54,19 @@
 //     <li>Item</li>  <!-- This was added after double-clicking -->
 //   </ol>
 
-/// TODO: replace this with your code
+const adderButton = document.querySelector('#item-adder')
+
+adderButton.addEventListener('click',() => {
+
+    let list = document.querySelector('#list');
+    let item = document.createElement('li');
+    item.innerText = "Item"
+
+    list.appendChild(item)
+
+
+
+})
 
 // Change colors
 //
@@ -45,7 +77,27 @@
 // Clicking on "Turn Stuff Red" should make text red and clicking on "Turn
 // Stuff Blue" should make text blue.
 
-/// TODO: replace this with your code
+
+
+let changers = document.querySelectorAll('.changes-colors')
+
+const colorChange = (element,color) => {
+    element.style.color = `${color}`
+}
+
+document.querySelector('#red').addEventListener('click', () => {
+    
+    for (let element of changers) {
+        colorChange(element,'red')
+    }
+})
+
+document.querySelector('#blue').addEventListener('click', () => {
+    
+    for (let element of changers) {
+        colorChange(element,'blue')
+    }
+})
 
 // Calculate factorial
 //
@@ -62,7 +114,28 @@
 //   - calls your function that calculates a factorial
 //   - puts the result of the function inside the "result" span
 
-/// TODO: replace this with your code
+document.querySelector('#factorial-calculator').addEventListener('submit', (event) => {
+    event.preventDefault();
+
+    let num = document.querySelector('#factorial-input').value
+    const numbersArray = []
+    let factorial = 1
+
+
+    for (let i = 1; i <= num; i++) {
+        numbersArray.push(i)
+
+
+    }
+
+    for (let number of numbersArray) {
+        factorial = number * factorial
+    }
+
+    document.querySelector('#result').innerText = factorial
+
+
+})
 
 // Validate a form
 //
@@ -71,12 +144,31 @@
 // checks the length of the text entered into the <textarea> when the user
 // submits the form.
 //
-//  If the text is three or more characters long, change
+//  If the text is four or more characters long, change
 //  the feedback text to say "Thanks for your submission!" and change
 //  the color of the text to green.
 //
-// If the text is less than three characters long, change
+// If the text is less than four characters long, change
 // the feedback text to say "The word must be at least 4 characters long." and
 // change the color of the text to red..
 
-/// TODO: replace this with your code
+document.querySelector('.form-feedback').innerText = ''
+
+document.querySelector('#recommend-word').addEventListener('submit',(event) => {
+
+    event.preventDefault();
+    let submittedWord = document.querySelector('#word').value
+
+    if (submittedWord.length >= 4) {
+        document.querySelector('.form-feedback').innerText = 'Thanks for your submission!';
+        document.querySelector('.form-feedback').style.color = 'green'
+
+    } else {
+        document.querySelector('.form-feedback').innerText = 'The word must be at least 4 characters long.'
+        document.querySelector('.form-feedback').style.color = 'red'
+    }
+
+
+
+
+})
