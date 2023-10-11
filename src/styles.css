@@ -1,0 +1,21 @@
+html {
+    background-color: black;
+}
+html label, th, td {
+    color: white;
+}
+
+table, th, td {
+    border-color: white;
+    border-style: solid;
+    border-width: 1px
+}
+
+th, td {
+    padding: 5px;
+}
+
+table, button, .character-namebox, .jedi-or-sith-box, .lightsaber-color-box {
+    margin-top: 16px;
+    margin-bottom: 16px;
+}

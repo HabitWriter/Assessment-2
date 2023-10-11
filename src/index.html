@@ -7,5 +7,65 @@
     <link rel="stylesheet" href="styles.css" />
   </head>
 
-  <body></body>
+  <body>
+    <div class="character-name-box">
+      <label for="character-name">Character Name:</label>
+      <input id="character-name" type="text">
+    </div>
+
+    <form action="">
+      <div class="jedi-or-sith-box">
+        <label for="jedi">Jedi</label>
+        <input id="jedi" type="radio">
+
+        <label for="sith">Sith</label>
+        <input id="sith" type="radio">
+      </div>
+
+      <div class="lightsaber-color-box">
+        <label for="lightsaber-color-select">Lightsaber color:</label>
+        <select name="lightsaber-color-select" id="">
+          <option value="blue">Blue</option>
+          <option value="green">Green</option>
+          <option value="red">Red</option>
+          <option value="purple">Purple</option>
+        </select>
+      </div>
+      <button>Submit</button>
+    </form>
+
+    <table>
+      <tr>
+        <th>Planet</th>
+        <th>Environment</th>
+        <th>Populations</th>
+      </tr>
+      <tr>
+        <td>Tatooine</td>
+        <td>Desert</td>
+        <td>200,000</td>
+      </tr>
+      <tr>
+        <td>Hoth</td>
+        <td>Ice</td>
+        <td>0</td>
+        <!-- The rebels must be hiding their population -->
+      </tr>
+      <tr>
+        <td>Endor</td>
+        <td>Forest</td>
+        <td>30,000,000</td>
+        <!-- Endor is technically not a planet, but a forest moon -->
+      </tr>
+      <tr>
+        <td>Mustafar</td>
+        <td>Lava</td>
+        <td>10,000</td>
+      </tr>
+
+
+    </table>
+
+
+  </body>
 </html>
