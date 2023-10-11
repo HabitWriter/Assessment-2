@@ -15,7 +15,11 @@ th, td {
     padding: 5px;
 }
 
-table, button, .character-namebox, .jedi-or-sith-box, .lightsaber-color-box {
+button, .character-namebox, .jedi-or-sith-box, .lightsaber-color-box {
     margin-top: 16px;
     margin-bottom: 16px;
+}
+
+table {
+    margin-top: 50px;
 }
